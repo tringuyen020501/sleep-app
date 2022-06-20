@@ -1,0 +1,434 @@
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1,h2,h3,p{
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+button, input{
+  font-family: 'Quicksand', sans-serif;
+}
+
+.loading{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading .spinner{
+  border: 5px solid #eee;
+  border-top: 5px solid #353535;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container{
+  margin: 10px 0px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  height: 97vh;
+}
+
+.container .menu{
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+/* Logo */
+.logo{
+  margin: 40px 30px;
+  text-align: center;
+  background: linear-gradient(to bottom, #df3e55 0%,#df3e55 65%, #1c203b 65%, #1c203b 100%);
+  border-radius: 50px;
+  box-shadow: #df3e55 0px 3px 8px;
+}
+.logo .logo_img {
+  margin: 10px 0;
+}
+.logo .logo_title{
+  padding: 10px 0;
+  color: #fff;
+}
+/* Button */
+.touch{
+  border: transparent;
+  background: transparent;
+  border-top: #fff solid 1px;
+  border-bottom: #fff solid 1px;
+  background: #1c203b;
+  color: #fff;
+  padding : 10px;
+  width: 100%;
+  font-size : 1.5em;
+  font-variant : small-caps;
+  cursor : pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s linear;
+}
+.touch .toggle{
+  transition: all 0.2s linear;
+}
+.touch:hover{
+  background: #df3e55;
+  color: #fff; 
+}
+.touch:hover .toggle{
+  transform: rotate(90deg);
+  color: #fff;
+}
+/* List User */
+.nav_list_user .list_user{
+  clear:both;
+  padding: 0px;
+  margin: 0px;
+  background: #41445a;
+  width:100%;
+  overflow: hidden;
+  transition: height 0.4s ease;
+  max-height: 40vh;
+  overflow: auto;
+}
+.nav_list_user .list_user .btn_user{
+  display: block;
+  color: #fff;
+  font-size: 100%;
+  text-align: left;
+  padding: 10px 30px;
+  background-color: #41445a;
+  width: 100%;
+  border-bottom: #f5f5f5 solid 1px;
+  border-top: none;
+  transition: all 0.2s linear;
+}
+.nav_list_user .list_user .btn_user:hover{
+  background: #df3e55;
+  color: #fff; 
+}
+.list_user_container{
+  height: 0;
+  overflow: hidden;
+  transition: all 0.2s linear;
+}
+
+/*  */
+.container .info{
+  margin: 0 20px;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.user_info{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 100%;
+}
+.personal_info{
+  padding: 20px;
+  border-right: #1c203b 1px solid;
+  overflow: hidden;
+}
+.avatar_container{
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+.avatar{
+  vertical-align: middle;
+  border: #1c203b 3px solid;
+  border-radius: 50%;
+  width: 150px;
+}
+.user_info_item{
+  display: grid;
+  grid-template-columns: 40% 60%;
+  font-size: larger;
+  margin-top: 20px;
+}
+/*  */
+.user_notify{
+  padding: 20px;
+}
+.title_notify{
+  margin-bottom: 10px;
+}
+.user_notify ul{
+  max-height: 80vh;
+  overflow: auto;
+}
+.user_notify li{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.user_notify li span{
+  
+  font-size: larger;
+}
+/* Form */
+.form_box{
+  height: 100%;
+  width: 50%;
+  padding: 30px 0;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.form_box .form_input{
+  position: relative;
+}
+.form_box .form_input input{
+  width: 100%;
+  padding: 10px 0;
+  font-size: 20px;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #1c203b;
+  outline: none;
+  background: transparent;
+}
+.form_box .form_input label{
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 20px;
+  pointer-events: none;
+  transition: .5s;
+}
+.form_box .form_input input:focus,
+.form_box .form_input input:valid{
+  border-color: #df3e55;
+}
+.form_box .form_input input:focus + label,
+.form_box .form_input input:valid + label{
+  top: -20px;
+  left: 0;
+  color: #df3e55;
+  font-size: 15px;
+}
+.form_avatar_container{
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 30px;
+}
+.form_avatar_container .form_avatar{
+  object-fit: cover;
+  border: #1c203b 3px solid;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+.form_avatar_input{
+  color: transparent;
+  max-width: 40%;
+}
+.form_avatar_input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.form_avatar_input::before {
+  content: 'Chọn ảnh đại diện';
+  color: #1c203b;
+  display: inline-block;
+  border: 1px solid #1c203b;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.2s linear;
+}
+.form_avatar_input:hover::before {
+  border-color: #df3e55;
+  color: #df3e55;
+}
+.form_avatar_input:active {
+  outline: 0;
+}
+.form_avatar_input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+}
+.form_btn{
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 20px;
+  font-size: 20px;
+  background-color: transparent;
+  border: 1px solid #1c203b;
+  border-radius: 30px;
+  transition: all 0.2s linear;
+}
+.form_btn:hover{
+  color: #fff;
+  background-color: #df3e55;
+  cursor: pointer;
+}
+
+.common_title{
+  text-align: center;
+  padding: 20px 0;
+}
+.common_item{
+  display: grid;
+  grid-template-columns: 30% 30% 40%;
+  padding: 10px;
+}
+.common_container{
+  max-height: 80vh;
+  overflow: auto;
+}
+.common_item p{
+  text-align:  center;
+  font-size: larger;
+}
+
+/* Login */
+.login_align{
+  background-color: #2c3338;
+  color: #606468;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  height: 100%;
+  line-height: 1.5;
+  margin: 0;
+  min-height: 100vh;
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  -webkit-box-orient: vertical;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+.login_align h1{
+  color: #d44179;
+  margin-bottom: 30px;
+}
+.login_grid{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 20rem;
+  width: 90%;
+}
+.login{
+  color: #eee;
+}
+.login_form{
+  margin: -14px;
+  margin: -0.875rem;
+}
+.login label{
+  background-color: #363b41;
+  border-radius: 0.25rem;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  padding-left: 20px;
+  padding-left: 1.25rem;
+  padding-right: 20px;
+  padding-right: 1.25rem;
+  
+  padding: 16px;
+  padding: 1rem;
+}
+.login_form__field{
+  display: flex;
+  margin: 14px;
+  margin: 0.875rem;
+}
+.login_icon{
+  display: inline-block;
+  fill: #606468;
+  font-size: 16px;
+  font-size: 1rem;
+  height: 1em;
+  vertical-align: middle;
+  width: 1em;
+}
+.login_hidden{
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.login_form__input{
+  background-color: #3b4148;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  padding: 16px;
+  padding: 1rem;
+  -webkit-box-flex: 1;
+  flex: 1;
+  background-image: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  transition: background-color 0.3s;
+}
+.login_form__input:hover{
+  background-color: #434a52;
+}
+.login_form__input:focus{
+  background-color: #434a52;
+}
+.login input[type='submit'] {
+  background-color: #ea4c88;
+  color: #eee;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  padding: 16px;
+  padding: 1rem;
+  width: 100%;
+  cursor: pointer;
+  background-image: none;
+  border: 0;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  transition: background-color 0.3s;
+}
+.login input[type='submit']:hover{
+  background-color: #d44179;
+}
+.login input[type='submit']:focus{
+  background-color: #d44179;
+}
