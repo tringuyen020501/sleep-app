@@ -68,7 +68,7 @@ button, input{
   margin: 40px 30px;
   text-align: center;
   background: linear-gradient(to bottom, #df3e55 0%,#df3e55 65%, #1c203b 65%, #1c203b 100%);
-  border-radius: 50px;
+  /* border-radius: 50px; */
   box-shadow: #df3e55 0px 3px 8px;
 }
 .logo .logo_img {
