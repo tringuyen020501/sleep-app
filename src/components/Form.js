@@ -9,7 +9,6 @@ function Form({ users }) {
     setURL(URL.createObjectURL(event.target.files[0]));
   };
   const { register, handleSubmit } = useForm();
-  
   const onSubmit = async (data) => {
     var ok = true;
     users.forEach((user) => {
