@@ -2,7 +2,7 @@ function User({ user }) {
   const parseDateTime = (DateTime) => {
     var m = new Date(DateTime);
     var dateString =
-      m.getUTCDate() + 1
+      m.getUTCDate() + 1 +
       "/" +
       (m.getUTCMonth() + 1) +
       "/" +
